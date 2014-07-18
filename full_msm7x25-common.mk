@@ -22,8 +22,3 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 # Inherit device specific files
 $(call inherit-product, device/huawei/msm7x25-common/device_msm7x25-common.mk)
-
-# Overrides
-PRODUCT_BRAND := Huawei
-PRODUCT_MANUFACTURER := huawei
-PRODUCT_CHARACTERISTICS := phone
