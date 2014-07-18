@@ -18,7 +18,7 @@ LOCAL_PATH := $(call my-dir)
 $(call inherit-product, vendor/huawei/msm7x25-common/vendor.mk)
 
 # Add device package overlay
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS := device/huawei/msm7x25-common/overlay
 
 # LDPI assets
 PRODUCT_AAPT_CONFIG := mdpi ldpi
@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
     
 # Audio Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
+    device/huawei/msm7x25-common/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
     
 # Radio FM (test)
 #PRODUCT_PACKAGES += \
@@ -90,12 +90,12 @@ PRODUCT_PACKAGES += \
 
 # Camcorder Hack
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/app/Camcorder.apk:system/app/Camcorder.apk \
-    $(LOCAL_PATH)/prebuilt/lib/libandroid-illusion.so:system/lib/libandroid-illusion.so
+    device/huawei/msm7x25-common/prebuilt/app/Camcorder.apk:system/app/Camcorder.apk \
+    device/huawei/msm7x25-common/prebuilt/lib/libandroid-illusion.so:system/lib/libandroid-illusion.so
     
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+    device/huawei/msm7x25-common/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
     
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-player=true \
@@ -114,13 +114,13 @@ PRODUCT_PACKAGES += \
     
 # Replace Gallery2D with QuickPic
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/app/QuickPic.apk:system/app/Gallery2D.apk \
-    $(LOCAL_PATH)/prebuilt/lib/libqpicjni136.so:system/lib/libqpicjni136.so
+    device/huawei/msm7x25-common/prebuilt/app/QuickPic.apk:system/app/Gallery2D.apk \
+    device/huawei/msm7x25-common/prebuilt/lib/libqpicjni136.so:system/lib/libqpicjni136.so
     
 # Replace Trebuchet with Nova Launcher
 #PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/prebuilt/app/NovaLauncher.apk:system/app/Trebuchet.apk \
-#    $(LOCAL_PATH)/prebuilt/lib/libgif.so:system/lib/libgif.so
+#    device/huawei/msm7x25-common/prebuilt/app/NovaLauncher.apk:system/app/Trebuchet.apk \
+#    device/huawei/msm7x25-common/prebuilt/lib/libgif.so:system/lib/libgif.so
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -128,7 +128,7 @@ PRODUCT_PACKAGES += \
     
 # Bluetooth Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf
+    device/huawei/msm7x25-common/prebuilt/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf
     
 # Lights
 PRODUCT_PACKAGES += \
@@ -147,8 +147,8 @@ PRODUCT_PACKAGES += \
     
 # MSM7x25Parts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/init.msm7x25.parts.rc:root/init.msm7x25.parts.rc \
-    $(LOCAL_PATH)/prebuilt/bin/handle_msm7x25parts:system/bin/handle_msm7x25parts
+    device/huawei/msm7x25-common/ramdisk/init.msm7x25.parts.rc:root/init.msm7x25.parts.rc \
+    device/huawei/msm7x25-common/prebuilt/bin/handle_msm7x25parts:system/bin/handle_msm7x25parts
     
 # zRAM
 PRODUCT_PACKAGES += \
@@ -182,7 +182,7 @@ PRODUCT_PACKAGES += \
    
 # Vold
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+    device/huawei/msm7x25-common/prebuilt/etc/vold.fstab:system/etc/vold.fstab
     
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20    
@@ -210,8 +210,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     
 # Wi-Fi related
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    $(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    device/huawei/msm7x25-common/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+    device/huawei/msm7x25-common/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # Hardware permissions
 PRODUCT_COPY_FILES += \
@@ -230,11 +230,11 @@ PRODUCT_COPY_FILES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc
+    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc
 
 # Tethering
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/bin/huawei_tether:system/bin/huawei_tether
+    device/huawei/msm7x25-common/prebuilt/bin/huawei_tether:system/bin/huawei_tether
     
 # Enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
