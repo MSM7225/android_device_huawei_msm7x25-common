@@ -30,7 +30,7 @@ $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_BRAND := Huawei
+#PRODUCT_BRAND := Huawei
 PRODUCT_MANUFACTURER := Huawei
 PRODUCT_CHARACTERISTICS := phone
 
