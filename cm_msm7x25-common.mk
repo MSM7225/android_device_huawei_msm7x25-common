@@ -21,7 +21,7 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 TARGET_BOOTANIMATION_NAME := vertical-240x320
 
 # Inherit device configuration
-$(call inherit-product, $(LOCAL_PATH)/full_msm7x25-common.mk)
+$(call inherit-product, device/huawei/msm7x25-common/full_msm7x25-common.mk)
 
 # Inherit some common cyanogenmod stuff.
 $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
