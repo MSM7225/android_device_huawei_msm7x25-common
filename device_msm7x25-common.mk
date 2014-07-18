@@ -211,17 +211,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
     mobiledata.interfaces=rmnet0,rmnet1,rmnet2
     
 # Wifi interface
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=15
-    
-# Wi-Fi related
-PRODUCT_COPY_FILES += \
-    device/huawei/msm7x25-common/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    device/huawei/msm7x25-common/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # Hardware permissions
 PRODUCT_COPY_FILES += \
