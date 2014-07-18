@@ -150,10 +150,20 @@ PRODUCT_COPY_FILES += \
     device/huawei/msm7x25-common/ramdisk/init.msm7x25.parts.rc:root/init.msm7x25.parts.rc \
     device/huawei/msm7x25-common/prebuilt/bin/handle_msm7x25parts:system/bin/handle_msm7x25parts
     
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.fm-attn=0 \
+    persist.sys.headset-attn=0 \
+    persist.sys.speaker-attn=6 \
+    persist.sys.read_ahead_kb=0 \
+    persist.sys.processlimit=2
+    
 # zRAM
 PRODUCT_PACKAGES += \
     hwprops \
     rzscontrol
+    
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.zram.default=0
 
 # Dalvik VM
 PRODUCT_PROPERTY_OVERRIDES += \
