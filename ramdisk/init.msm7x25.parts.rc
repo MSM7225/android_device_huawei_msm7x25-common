@@ -1,7 +1,7 @@
 on boot
 
-# U8160Parts - helper service
-service u8160parts /system/bin/sh /system/bin/handle_u8160parts
+# MSM7x25Parts - helper service
+service msm7x25parts /system/bin/sh /system/bin/handle_msm7x25parts
     class main
     user root
     group root

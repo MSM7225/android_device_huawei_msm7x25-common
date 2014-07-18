@@ -1,5 +1,5 @@
 #
-# system.prop for Huawei U8160
+# system.prop for Huawei MSM7x25 Board
 #
 
 # RIL properties
@@ -13,8 +13,8 @@ persist.sys.fm-attn=0
 persist.sys.headset-attn=0
 persist.sys.speaker-attn=6
 
-# SD card readahead buffer (U8160Parts)
+# SD card readahead buffer (MSM7x25Parts)
 persist.sys.read_ahead_kb=0
 
-# Background process limit (U8160Parts)
+# Background process limit (MSM7x25Parts)
 persist.sys.processlimit=2

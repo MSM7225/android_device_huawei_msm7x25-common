@@ -12,12 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := $(call my-dir)
+
 # Inherit products
 $(call inherit-product, vendor/huawei/msm7x25-common/vendor.mk)
-$(call inherit-product, vendor/huawei/u8160/vendor.mk)
 
 # Add device package overlay
-DEVICE_PACKAGE_OVERLAYS := device/huawei/u8160/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # LDPI assets
 PRODUCT_AAPT_CONFIG := mdpi ldpi
@@ -38,8 +39,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics 
 PRODUCT_PACKAGES += \
-    copybit.u8160 \
-    gralloc.u8160
+    copybit.msm7k \
+    gralloc.msm7k
     
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.use_16bpp_alpha=1 \
@@ -50,20 +51,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=65536 \
     windowsmgr.max_events_per_sec=170
     
-# Screen
+# Graphics density
+ifneq (,$(filter u8500,$(CM_BUILD)))
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=160
+else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=120
+endif
 
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio_policy.u8160 \
-    audio.primary.u8160
+    audio_policy.msm7k \
+    audio.primary.msm7k
     
 # Audio Config
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/u8160/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
+    $(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
     
 # Radio FM (test)
 #PRODUCT_PACKAGES += \
@@ -81,16 +86,16 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.u8160
+    camera.msm7k
 
 # Camcorder Hack
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/app/Camcorder.apk:system/app/Camcorder.apk \
-    device/huawei/u8160/prebuilt/lib/libandroid-illusion.so:system/lib/libandroid-illusion.so
+    $(LOCAL_PATH)/prebuilt/app/Camcorder.apk:system/app/Camcorder.apk \
+    $(LOCAL_PATH)/prebuilt/lib/libandroid-illusion.so:system/lib/libandroid-illusion.so
     
 # Media
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
     
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-player=true \
@@ -109,36 +114,25 @@ PRODUCT_PACKAGES += \
     
 # Replace Gallery2D with QuickPic
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/app/QuickPic.apk:system/app/Gallery2D.apk \
-    device/huawei/u8160/prebuilt/lib/libqpicjni136.so:system/lib/libqpicjni136.so
+    $(LOCAL_PATH)/prebuilt/app/QuickPic.apk:system/app/Gallery2D.apk \
+    $(LOCAL_PATH)/prebuilt/lib/libqpicjni136.so:system/lib/libqpicjni136.so
     
 # Replace Trebuchet with Nova Launcher
 #PRODUCT_COPY_FILES += \
-#    device/huawei/u8160/prebuilt/app/NovaLauncher.apk:system/app/Trebuchet.apk \
-#    device/huawei/u8160/prebuilt/lib/libgif.so:system/lib/libgif.so
+#    $(LOCAL_PATH)/prebuilt/app/NovaLauncher.apk:system/app/Trebuchet.apk \
+#    $(LOCAL_PATH)/prebuilt/lib/libgif.so:system/lib/libgif.so
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.u8160
-    
-# Bluetooth
-PRODUCT_PACKAGES += \
-    huawei_brcm_patchram_plus
+    gps.msm7k
     
 # Bluetooth Config
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
-    device/huawei/u8160/prebuilt/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf
+    $(LOCAL_PATH)/prebuilt/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf
     
 # Lights
 PRODUCT_PACKAGES += \
-    lights.u8160
-    
-# Touchscreen
-PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/melfas-touchscreen.idc \
-    device/huawei/u8160/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/synaptics.idc \
-    device/huawei/u8160/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
+    lights.msm7k
 
 PRODUCT_PROPERTY_OVERRIDES += \
     view.fading_edge_length=8 \
@@ -146,25 +140,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     view.scroll_friction=0.008 \
     view.touch_slop=15 \
     ro.max.fling_velocity=4000
-
-# Keylayouts
-PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/usr/keylayout/touchscreen-keys.kl:system/usr/keylayout/melfas-touchscreen.kl \
-    device/huawei/u8160/prebuilt/usr/keylayout/touchscreen-keys.kl:system/usr/keylayout/synaptics.kl \
-    device/huawei/u8160/prebuilt/usr/keylayout/touchscreen-keys.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
     
 # Hardware Management
 PRODUCT_PACKAGES += \
-    U8160Parts
+    MSM7x25Parts
     
-# U8160Parts
+# MSM7x25Parts
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/ramdisk/init.u8160.parts.rc:root/init.u8160.parts.rc \
-    device/huawei/u8160/prebuilt/bin/handle_u8160parts:system/bin/handle_u8160parts
-    
-# Huawei Hardware setup
-PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/etc/init.d/02setuphuawei:system/etc/init.d/02setuphuawei
+    $(LOCAL_PATH)/ramdisk/init.msm7x25.parts.rc:root/init.msm7x25.parts.rc \
+    $(LOCAL_PATH)/prebuilt/bin/handle_msm7x25parts:system/bin/handle_msm7x25parts
     
 # zRAM
 PRODUCT_PACKAGES += \
@@ -198,7 +182,7 @@ PRODUCT_PACKAGES += \
    
 # Vold
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+    $(LOCAL_PATH)/prebuilt/etc/vold.fstab:system/etc/vold.fstab
     
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20    
@@ -226,8 +210,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     
 # Wi-Fi related
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    device/huawei/u8160/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    $(LOCAL_PATH)/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+    $(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # Hardware permissions
 PRODUCT_COPY_FILES += \
@@ -246,14 +230,11 @@ PRODUCT_COPY_FILES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/ramdisk/init.rc:root/init.rc \
-    device/huawei/u8160/ramdisk/init.u8160.rc:root/init.u8160.rc \
-    device/huawei/u8160/ramdisk/init.u8160.usb.rc:root/init.u8160.usb.rc \
-    device/huawei/u8160/ramdisk/ueventd.u8160.rc:root/ueventd.u8160.rc
+    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc
 
 # Tethering
 PRODUCT_COPY_FILES += \
-    device/huawei/u8160/prebuilt/bin/huawei_tether:system/bin/huawei_tether
+    $(LOCAL_PATH)/prebuilt/bin/huawei_tether:system/bin/huawei_tether
     
 # Enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector

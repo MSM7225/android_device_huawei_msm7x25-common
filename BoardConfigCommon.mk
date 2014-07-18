@@ -17,6 +17,8 @@
 # Product-specific compile-time definitions.
 #
 
+LOCAL_PATH := $(call my-dir)
+
 # Camera
 USE_CAMERA_STUB := true
 COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
@@ -28,11 +30,7 @@ TARGET_CPU_ABI := armeabi-v6j
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv6j
 TARGET_ARCH_VARIANT_CPU := arm1136ej-s
-TARGET_SPECIFIC_HEADER_PATH := device/huawei/u8160/include
-
-# Target Properties
-TARGET_BOOTLOADER_BOARD_NAME := u8160
-TARGET_OTA_ASSERT_DEVICE := u8160,hwu8160,u8180,hwu8180
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/msm7x25-common/include
 
 # Target Information
 TARGET_NO_BOOTLOADER := true
@@ -43,12 +41,10 @@ TARGET_NO_RECOVERY := false
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_HAVE_HUAWEI_BLUETOOTH := true
 
 # GPS
 BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := u8160
 
 # Browser
 JS_ENGINE := v8
@@ -85,7 +81,7 @@ BOARD_PROVIDES_LIBRIL := true
 
 # Graphics
 USE_OPENGL_RENDERER := false
-BOARD_EGL_CFG := device/huawei/u8160/prebuilt/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/huawei/msm7x25-common/prebuilt/lib/egl/egl.cfg
 BOARD_NO_RGBX_8888 := true
 COMMON_GLOBAL_CFLAGS += -DNO_RGBX_8888
 COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE 
@@ -109,42 +105,23 @@ COMMON_GLOBAL_CFLAGS += -DSQLITE_NO_SYNC ## Performance Test
 #COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_OMX ## Test on MSM7x25
 #COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK ## GB Related, Inexistent on ICS
 
-# Wi-Fi
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
-WIFI_BAND := 802_11_ABG
-BOARD_WLAN_DEVICE := bcm4329
-BOARD_WLAN_DEVICE_REV := bcm4329
-
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_PATH_AP := "/system/wifi/firmware_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P := "/system/wifi/firmware_apsta.bin"
-WIFI_DRIVER_FW_PATH_STA := "/system/wifi/firmware.bin"
-WIFI_DRIVER_MODULE_NAME := "dhd"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/wifi/firmware.bin nvram_path=/data/misc/wifi/nvram.txt iface_name=wlan"
-
 # Minimal fonts
 SMALLER_FONT_FOOTPRINT := true
 #MINIMAL_FONT_FOOTPRINT := true ## Inexistent on ICS
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/huawei/u8160/recovery/recovery.fstab
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/u8160/recovery/recovery_keys.c
+TARGET_RECOVERY_FSTAB := device/huawei/msm7x25-common/recovery/recovery.fstab
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/msm7x25-common/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := "<font_7x16.h>"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 BOARD_LDPI_RECOVERY := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/huawei/msm7x25-common
-TARGET_KERNEL_CONFIG := hw_msm7x25_cm9_defconfig
 BOARD_KERNEL_BASE := 0x00200000
-BOARD_KERNEL_CMDLINE := mem=211M console=ttyMSM2,115200n8 androidboot.hardware=u8160
 BOARD_KERNEL_PAGESIZE := 4096
 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_FLASH_BLOCK_SIZE := 262144
-#TARGET_PREBUILT_KERNEL := device/huawei/u8160/prebuilt/kernel ## Now compiled from sources
 
 # Init
 TARGET_PROVIDES_INIT_RC := true
@@ -167,9 +144,3 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00500000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00500000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0aa00000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0a6a0000
-
-# FM Radio
-BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
-BOARD_FM_DEVICE := bcm4329
-#BOARD_USE_BROADCOM_FM_VOLUME_HACK := true

@@ -1,7 +1,3 @@
 Copyright 2014 - The CyanogenMod Project
 
-Device configuration for Huawei U8160/Vodafone Smart I/Orange StockHolm | Huawei U8180/IDEOS X1
-
-Pre-Setup
-=========
-Execute "extract-files.sh" to extract prebuilt libraries (from a working device)
+Device configuration for Huawei MSM7x25 Devices

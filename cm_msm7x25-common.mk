@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := $(call my-dir)
+
 # Specify phone tech before including full_phone
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
@@ -19,7 +21,7 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 TARGET_BOOTANIMATION_NAME := vertical-240x320
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/u8160/full_u8160.mk)
+$(call inherit-product, $(LOCAL_PATH)/full_msm7x25-common.mk)
 
 # Inherit some common cyanogenmod stuff.
 $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
@@ -28,15 +30,9 @@ $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := cm_u8160
-PRODUCT_DEVICE := u8160
 PRODUCT_BRAND := Huawei
-PRODUCT_MODEL := u8160
 PRODUCT_MANUFACTURER := Huawei
 PRODUCT_CHARACTERISTICS := phone
-
-PRODUCT_RELEASE_NAME := U8160/Smart
-PRODUCT_VERSION_DEVICE_SPECIFIC := -U8160/Smart
 
 # CyanogenMod Properties
 BOARD_NO_LIVEWALLPAPERS := true

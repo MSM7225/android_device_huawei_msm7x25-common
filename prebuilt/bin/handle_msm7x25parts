@@ -1,6 +1,6 @@
 #!/system/bin/sh
-# handle_u8160parts
-# by psyke83
+# handle_msm7x25-parts
+# by Alberto96
 
 isbooted=$(getprop sys.boot_completed)
 sdreadahead=$(getprop persist.sys.read_ahead_kb)
