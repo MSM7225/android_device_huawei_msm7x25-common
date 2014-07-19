@@ -91,7 +91,7 @@ COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 #COMMON_GLOBAL_CFLAGS += -DTARGET_MSM7x27 ## Useless, maybe GB Related
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true ## Needed for pseudo hw-accel
 BOARD_USE_NASTY_PTHREAD_CREATE_HACK := true ## Needs a patch on ICS
-#BOARD_USE_SKIA_LCDTEXT := true # not sure
+BOARD_USE_SKIA_LCDTEXT := true # testing
 #COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT ## GB Related, Inexistent on ICS
 #COMMON_GLOBAL_CFLAGS += -DUNABLE_TO_DEQUEUE ## GB Related, Inexistent on ICS
 
