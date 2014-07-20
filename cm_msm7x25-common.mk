@@ -17,9 +17,6 @@ LOCAL_PATH := $(call my-dir)
 # Specify phone tech before including full_phone
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
-# BootAnimation
-TARGET_BOOTANIMATION_NAME := vertical-240x320
-
 # Inherit device configuration
 $(call inherit-product, device/huawei/msm7x25-common/full_msm7x25-common.mk)
 
