@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm7k
     
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.use_16bpp_alpha=1 \
+    persist.sys.prefer_16bpp=1 \
     persist.sys.use_dithering=0 \
     persist.sys.purgeable_assets=1 \
     persist.sys.strictmode.visual=false \
