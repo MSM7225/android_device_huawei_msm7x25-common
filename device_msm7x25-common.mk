@@ -249,7 +249,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/melfas-touchscreen_Ver23.kl \
     device/huawei/msm7x25-common/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/melfas-touchscreen.idc \
     device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/melfas-touchscreen.kl \
-    device/huawei/msm7x25-common/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl \
     device/huawei/msm7x25-common/prebuilt/usr/idc/cypress-ts-innolux_Ver04.idc:system/usr/idc/cypress-ts-innolux_Ver04.idc \
     device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/cypress-ts-innolux_Ver04.kl \
