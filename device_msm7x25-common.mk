@@ -266,8 +266,10 @@ PRODUCT_COPY_FILES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc \
-    device/huawei/msm7x25-common/ramdisk/ueventd.msm7k.rc:root/ueventd.msm7k.rc
+    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc
+
+PRODUCT_PACKAGES += \
+    ueventd.$(TARGET_BOOTLOADER_BOARD_NAME).rc
 
 # Tethering
 PRODUCT_COPY_FILES += \
