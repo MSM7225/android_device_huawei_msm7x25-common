@@ -266,7 +266,8 @@ PRODUCT_COPY_FILES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc
+    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc \
+    device/huawei/msm7x25-common/ramdisk/ueventd.msm7k.rc:root/ueventd.msm7k.rc
 
 # Tethering
 PRODUCT_COPY_FILES += \
