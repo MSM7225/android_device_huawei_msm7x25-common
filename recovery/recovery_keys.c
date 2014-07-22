@@ -24,28 +24,29 @@
 
 int device_toggle_display(volatile char* key_pressed, int key_code) {
     // hold power and press volume-up
-    return key_pressed[KEY_POWER] && key_code == KEY_VOLUMEUP;
+    return key_pressed[116] && key_code == 115;
 }
 
 int device_handle_key(int key_code, int visible) {
     if (visible) {
         switch (key_code) {
-            case KEY_DOWN:
-            case KEY_VOLUMEDOWN:
+            case 108:
+            case 114:
                 return HIGHLIGHT_DOWN;
 
-            case KEY_UP:
-            case KEY_VOLUMEUP:
+            case 103:
+            case 115:
                 return HIGHLIGHT_UP;
 
-            case KEY_ENTER:
-            case KEY_POWER:
-                return SELECT_ITEM;
-               
-            case KEY_MENU:
+            case 232:
+            case 116:
+            case 102:
+            case 139:
                 return SELECT_ITEM;
            
-            case KEY_BACK:
+            case 158:
+            case 217:
+            case 62:
                 return GO_BACK;
         }
     }
