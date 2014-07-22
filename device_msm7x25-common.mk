@@ -232,6 +232,38 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
+# Input Devices Configs & Keylayouts
+PRODUCT_COPY_FILES += \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/touchscreen-keypad.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/kp_test_input.idc:system/usr/idc/kp_test_input.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/ts_test_input.idc:system/usr/idc/ts_test_input.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/adp5587.idc:system/usr/idc/adp5587.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/sensors.idc:system/usr/idc/sensors.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/synaptics.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/synaptics.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/melfas-touchscreen.Ver23.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/melfas-touchscreen.Ver23.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/melfas-touchscreen_ver23.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/melfas-touchscreen_ver23.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/melfas-touchscreen_Ver23.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/melfas-touchscreen_Ver23.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/touchscreen.idc:system/usr/idc/melfas-touchscreen.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/melfas-touchscreen.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/cypress-ts-innolux_Ver04.idc:system/usr/idc/cypress-ts-innolux_Ver04.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/cypress-ts-innolux_Ver04.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/msm_touchscreen.idc:system/usr/idc/msm_touchscreen.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/touchscreen-keypad.kl:system/usr/keylayout/msm_touchscreen.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/7k_handset.idc:system/usr/idc/7k_handset.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/surf_keypad.idc:system/usr/idc/surf_keypad.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/avago-OFN.idc:system/usr/idc/avago-OFN.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/avago-OFN.kl:system/usr/keylayout/avago-OFN.kl \
+    device/huawei/msm7x25-common/prebuilt/usr/idc/ofn_ok_key.idc:system/usr/idc/ofn_ok_key.idc \
+    device/huawei/msm7x25-common/prebuilt/usr/keylayout/ofn_ok_key.kl:system/usr/keylayout/ofn_ok_key.kl
+
 # Init files
 PRODUCT_COPY_FILES += \
     device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc

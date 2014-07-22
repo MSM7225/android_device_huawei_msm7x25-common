@@ -1,0 +1,14 @@
+key 116   POWER             WAKE
+
+key 115   VOLUME_UP         WAKE_DROPPED
+key 114   VOLUME_DOWN       WAKE_DROPPED
+
+key 232   DPAD_CENTER       WAKE
+#U8180#key 232   HOME              WAKE
+key 108   DPAD_DOWN         WAKE_DROPPED
+key 103   DPAD_UP           WAKE_DROPPED
+key 105   DPAD_LEFT         WAKE_DROPPED
+key 106   DPAD_RIGHT        WAKE_DROPPED
+
+key 231   CALL              WAKE_DROPPED
+key 62    ENDCALL           WAKE_DROPPED
