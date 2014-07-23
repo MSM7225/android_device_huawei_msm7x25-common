@@ -62,22 +62,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=120
 endif
 
+# Audio
 PRODUCT_PACKAGES += \
-    audio_policy.msm7k \
-    audio.primary.msm7k \
     audio.a2dp.default \
-    libaudioutils
+    audio_policy.msm7k \
+    audio.primary.msm7k
     
 # Audio Config
 PRODUCT_COPY_FILES += \
     device/huawei/msm7x25-common/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
     
 # Radio FM (test)
-PRODUCT_PACKAGES += \
-    Effem \
-    libfmradio.bcm4329 \
-    hcitool \
-    hciconfig
+#PRODUCT_PACKAGES += \
+#    Effem \
+#    libfmradio.bcm4329 \
+#    hcitool \
+#    hciconfig
 
 # Video decoding
 #PRODUCT_PACKAGES += \
@@ -232,8 +232,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/com.stericsson.hardware.fm.receiver.xml:system/etc/permissions/com.stericsson.hardware.fm.receiver.xml
+    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # Input Devices Configs & Keylayouts
 PRODUCT_COPY_FILES += \
