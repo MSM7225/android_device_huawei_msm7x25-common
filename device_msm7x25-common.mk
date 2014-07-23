@@ -14,6 +14,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+BOARD_VARIANT := $(shell echo $(PRODUCT_VERSION_DEVICE_SPECIFIC) | tr '[A-Z]' '[a-z]' | cut -c 2-)
+
 # Inherit products
 $(call inherit-product, vendor/huawei/msm7x25-common/vendor.mk)
 
@@ -266,8 +268,10 @@ PRODUCT_COPY_FILES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc \
-    device/huawei/msm7x25-common/ramdisk/ueventd.msm7k.rc:root/ueventd.$(TARGET_BOOTLOADER_BOARD_NAME).rc
+    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc
+    
+PRODUCT_PACKAGES += \
+    ueventd.$(BOARD_VARIANT).rc
 
 # Tethering
 PRODUCT_COPY_FILES += \
