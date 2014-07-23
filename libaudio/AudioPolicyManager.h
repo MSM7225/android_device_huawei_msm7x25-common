@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2009 The Android Open Source Project
+ * Copyright (C) 2012, Code Aurora Forum. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,11 +35,13 @@ public:
 
         virtual ~AudioPolicyManager() {}
 
+        virtual status_t setDeviceConnectionState(AudioSystem::audio_devices device,
+                                                          AudioSystem::device_connection_state state,
+                                                          const char *device_address);
+
         virtual uint32_t getDeviceForStrategy(routing_strategy strategy, bool fromCache = true);
-
-        // check that volume change is permitted, compute and send new volume to audio hardware
-        virtual status_t checkAndSetVolume(int stream, int index, audio_io_handle_t output, uint32_t device, int delayMs = 0, bool force = false);
-
+        virtual void setForceUse(AudioSystem::force_use usage, AudioSystem::forced_config config);
+        virtual bool isStreamActive(int stream, uint32_t inPastMs) const;
 protected:
         // true is current platform implements a back microphone
         virtual bool hasBackMicrophone() const { return false; }
@@ -46,6 +49,10 @@ protected:
         // true is current platform supports suplication of notifications and ringtones over A2DP output
         virtual bool a2dpUsedForSonification() const { return true; }
 #endif
-
+        // check that volume change is permitted, compute and send new volume to audio hardware
+        virtual status_t checkAndSetVolume(int stream, int index, audio_io_handle_t output, uint32_t device, int delayMs = 0, bool force = false);
+	virtual status_t stopInput(audio_io_handle_t input);
+	virtual void setPhoneState(int state);
+        virtual void setOutputDevice(audio_io_handle_t output,uint32_t device,bool force = false,int delayMs = 0);
 };
 };

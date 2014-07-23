@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 #include <stdint.h>
 #include <sys/types.h>
 #include <utils/Timers.h>
@@ -278,11 +277,7 @@ protected:
         // device
         virtual float computeVolume(int stream, int index, audio_io_handle_t output, uint32_t device);
         // check that volume change is permitted, compute and send new volume to audio hardware
-#ifdef WITH_QCOM_LPA
         virtual status_t checkAndSetVolume(int stream, int index, audio_io_handle_t output, uint32_t device, int delayMs = 0, bool force = false);
-#else
-        virtual status_t checkAndSetVolume(int stream, int index, audio_io_handle_t output, uint32_t device, int delayMs = 0, bool force = false);
-#endif
         // apply all stream volumes to the specified output and device
         void applyStreamVolumes(audio_io_handle_t output, uint32_t device, int delayMs = 0, bool force = false);
         // Mute or unmute all streams handled by the specified strategy on the specified output
