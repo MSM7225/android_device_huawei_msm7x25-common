@@ -186,6 +186,9 @@
     <!-- Max number of downloads allowed to proceed concurrently -->
     <integer name="config_MaxConcurrentDownloadsAllowed">1</integer>
     
+    <!-- Diable lockscreen rotation by default -->
+    <bool name="config_enableLockScreenRotation">true</bool>
+    
     <!-- CM CHANGES START HERE -->
 
     <!-- LUN file to be used by legacy USB manager.
