@@ -171,7 +171,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=32m \
     dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
+    dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y \
+    dalvik.vm.dexopt-data-only=1
 
 # Extended JNI checks
 # The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs
