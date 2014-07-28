@@ -22,6 +22,7 @@ LOCAL_PATH := $(call my-dir)
 
 # Camera
 USE_CAMERA_STUB := true
+BOARD_CAMERA_NO_UNWANTED_MSG := true
 COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
 
 # Target Chipset/Platform
