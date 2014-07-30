@@ -268,10 +268,8 @@ PRODUCT_COPY_FILES += \
     device/huawei/msm7x25-common/prebuilt/usr/keylayout/ofn_ok_key.kl:system/usr/keylayout/ofn_ok_key.kl
 
 # Init files
-PRODUCT_COPY_FILES += \
-    device/huawei/msm7x25-common/ramdisk/init.rc:root/init.rc
-    
 PRODUCT_PACKAGES += \
+    init.$(BOARD_VARIANT).usb.rc \
     ueventd.$(BOARD_VARIANT).rc
 
 # Tethering
