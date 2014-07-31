@@ -31,7 +31,7 @@ TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v6j
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv6j
-TARGET_ARCH_VARIANT_CPU := arm1136ej-s
+TARGET_ARCH_VARIANT_CPU := arm1136j-s
 TARGET_SPECIFIC_HEADER_PATH := device/huawei/msm7x25-common/include
 
 # Target Information
